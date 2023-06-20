@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
 
+export const Button = styled.button`
+  color: white;
+`;
+
 export const CountryWrapper = styled.div`
   background: #fff;
   max-width: 600px;
