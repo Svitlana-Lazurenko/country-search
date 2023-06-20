@@ -1,16 +1,20 @@
 import { FiSearch } from 'react-icons/fi';
 import { BtnSearch, Select, SearchFormStyled } from './SearchForm.styled';
 
-export const SearchForm = () => {
+export const SearchForm = ({ onSubmit, onChange }) => {
   return (
-    <SearchFormStyled>
+    <SearchFormStyled onSubmit={onSubmit}>
       <BtnSearch type="submit">
         <FiSearch size="16px" />
       </BtnSearch>
-      <Select aria-label="select" name="region" required>
-        <option selected disabled defaultValue="">
-          Select a region and press enter
-        </option>
+      <Select
+        aria-label="select"
+        name="region"
+        required
+        onChange={onChange}
+        defaultValue="Select a region and press enter"
+      >
+        <option disabled>Select a region and press enter</option>
         <option value="africa">Africa</option>
         <option value="america">America</option>
         <option value="asia">Asia</option>

@@ -8,6 +8,7 @@ import {
   CountryCapital,
   CountryDetail,
   Accent,
+  Button,
 } from './CountryInfo.styled';
 
 export const CountryInfo = ({
@@ -19,11 +20,11 @@ export const CountryInfo = ({
   population,
 }) => {
   const location = useLocation();
-  console.log(location);
+
   return (
     <>
       <Link to={location?.state?.from ?? '/'}>
-        <button type="button">Back</button>
+        <Button type="button">Back</Button>
       </Link>
       <CountryWrapper key={id}>
         <Flag>

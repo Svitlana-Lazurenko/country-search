@@ -12,10 +12,8 @@ export const Home = () => {
     const fetchData = async () => {
       try {
         const data = await getCountries();
-        console.log(data);
         setCountries(data);
       } catch (error) {
-        console.log(error);
         setError(error);
       } finally {
         setLoading(false);

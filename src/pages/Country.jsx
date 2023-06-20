@@ -1,4 +1,4 @@
-import { Section, Container, CountryInfo, Loader } from 'components';
+import { Section, Container, CountryInfo, Loader, Heading } from 'components';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCountry } from '../service/country-service';
@@ -26,13 +26,13 @@ export const Country = () => {
     fetchData();
   }, [countryId]);
 
-  console.log(country);
-
   const { flag, capital, countryName, id, languages, population } = country;
 
   return (
     <Section>
       <Container>
+        {loading && <Loader />}
+        {error && <Heading>{error.message}</Heading>}
         <CountryInfo
           flag={flag}
           capital={capital}
