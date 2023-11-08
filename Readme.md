@@ -1,36 +1,35 @@
-# Заняття 3. План
+# Country Search
 
-- Kahoot
-- Питання-відповідь
-- Практичне заняття
-
-## Завдання «Пошук країн»
-
-Створи базову маршрутизацію для застосунку пошуку і зберігання країн.
+Web-app for searching countries and viewing info about it. Team project.
 
 ## API REST COUNTRIES
 
-Для бекенду використовуй [[REST COUNTRIES]](https://restcountries.com/). У цій
-роботі будуть використовуватися наступні ендпоінти.
+Web-app uses [[REST COUNTRIES]](https://restcountries.com/).
 
-- [/v3.1/region/europe](https://restcountries.com/v3.1/subregion/europe) перелік
-  країн Європи для створення колекції на головній сторінці.
-- [/v3.1/region/{region}](https://restcountries.com/#api-endpoints-v3-region)
-  пошук країни по регіону на сторінці пошуку країн.
-- [/v3.1/name/{name}](https://restcountries.com/#api-endpoints-v3-name) запит на
-  повну інформацію про країну для сторінки країни.
+## Routes
 
-## Маршрути
+The application uses the following routes:
 
-У застосунку повинні бути такі маршрути. Якщо користувач зайшов за неіснуючим
-маршрутом, його необхідно перенаправляти на домашню сторінку.
+- `'/'` - component `<Home>`, Home page with a list of European countries.
+- `'/country'` - component `<CountrySearch>`, CountrySearch page by region.
+- `'/country/:countryId'` - component `<Country>`, page with detailed
+   information about the country.
 
-- `'/'` - компонент `<Home>`, домашня сторінка зі переліком Європейських країн.
-- `'/country'` - компонент `<CountrySearch>`, сторінка пошуку країн по регіону.
-- `'/country/:countryId'` - компонент `<Country>`, сторінка з детальною
-  інформацією про країну
+If a user enters a route that does not exist, he is redirected to the home page.
 
-## Програмна навігація
+## Navigation
 
-В застосунку повинно бути передбачена кнопка `Повернутись назад`, а також
-редирект при некоректному введенні країни
+The application has a ``Back'' button, as well as redirect when the country is entered incorrectly.
+
+## Technologies
+
+- JavaScript
+- React
+- React router
+- Emotion
+- Axios
+
+## Contributors
+
+- Svitlana-Lazurenko
+- AleksanderMukhin
